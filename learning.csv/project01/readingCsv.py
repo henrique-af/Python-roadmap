@@ -1,5 +1,5 @@
 import csv
-import sys
+import time
 
 #local do arquivo
 filePath = '.\\learning.csv\project01\\arquivoDados.csv'
@@ -21,20 +21,12 @@ nomeColuna = [x[0] for x in data]
 if nomeBusca in nomeColuna:
         for x in range(0, len(data)):
                 if nomeBusca == data[x][0]:
+                        time.sleep(0.1)
                         # nome, sexo, endereco, cidade, email, telefone, idade = data[x].split(',')
                         # print(nome)
-                        myList = [data.split(',', 1)[0] for i in data]
-                        print(myList)
+                        myList=','.join([str(item) for item in data[x]])
+                        myList.split(',')
+                        print(myList[1])
+                        # print('Nome: {}\nSexo: {}\nEndereço: {}\nCidade: {}\nE-mail: {}\nTelefone: {}\nIdade: {}'.format(myList[0], myList[1], myList[2], myList[3], myList[4], myList[5], myList[6]))
 else:
         print("\nNome não encontrado, tente novamente.")
-        
-# reader = list(csv.reader(open(, encoding='utf8'), delimiter=','))
-
-# for [nome, sexo, endereco, cidade, email, telefone, idade] in reader:
-#         i = 0;
-#         if nome == nome.reader[i]:
-#                 print('{} - {} - {} - {} - {} - {} - {}'.format(nome, sexo, endereco, cidade, email, telefone, idade))
-#         else:
-#                 i = i + 1;
-        
-        
