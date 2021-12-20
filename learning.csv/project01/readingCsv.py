@@ -6,7 +6,7 @@ filePath = '.\\learning.csv\project01\\arquivoDados.csv'
 
 #realiza leitura do csv
 data = []
-with open (filePath, encoding='utf8') as fileOpened:
+with open (filePath, "r", encoding='utf8') as fileOpened:
         reader = csv.reader(fileOpened, delimiter=',')
         for row in reader:
                 data.append(row)
